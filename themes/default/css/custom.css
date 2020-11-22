@@ -7,3 +7,11 @@
  */
 
 /* Các tùy chỉnh CSS của giao diện nên để vào đây */
+
+.fix_bottom_left {
+    width:120px;
+    height:400px;
+    position:fixed;
+    bottom:-300px;
+    left:5px;
+}

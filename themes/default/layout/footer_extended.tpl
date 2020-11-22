@@ -71,3 +71,7 @@
     <div class="fix_banner_right">
         [FIX_BANNER_RIGHT]
     </div>
+
+    <div class="fix_bottom_left">
+        [FIX_BOTTOM_LEFT]
+    </div>
