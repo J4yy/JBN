@@ -19,6 +19,7 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
 	user_id MEDIUMINT( 8 ) NOT NULL ,
 	title VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 	time int(11) unsigned NOT NULL ,
+	level int(3) NOT NULL DEFAULT '0' COMMENT '0: low, 1: medium, 2: high' ,
 	status BOOLEAN NOT NULL DEFAULT '0' ,
 	UNIQUE KEY user_title_time (user_id, title, time)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8";
