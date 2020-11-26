@@ -75,4 +75,6 @@ composer.lock
 
 # custom file
 /.phpintel
-.htaccess
+/.htaccess
+/data/config/config_global.php
+/data/config/robots.php
