@@ -108,6 +108,17 @@ if (! nv_function_exists('nv_menu_bootstrap')) {
         $xtpl->assign('NV_BASE_SITEURL', NV_BASE_SITEURL);
         $xtpl->assign('BLOCK_THEME', $block_theme);
         $xtpl->assign('THEME_SITE_HREF', NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA);
+        $xtpl->assign('SITE_NAME', $global_config['site_name']);
+        $xtpl->assign('LOGO_SRC', NV_BASE_SITEURL . $global_config['site_logo']);
+
+        // Search form variables
+        $xtpl->assign('NV_MAX_SEARCH_LENGTH', NV_MAX_SEARCH_LENGTH);
+        $xtpl->assign('NV_MIN_SEARCH_LENGTH', NV_MIN_SEARCH_LENGTH);
+        if (!$global_config['rewrite_enable']) {
+            $xtpl->assign('THEME_SEARCH_URL', NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=seek&amp;q=');
+        } else {
+            $xtpl->assign('THEME_SEARCH_URL', nv_url_rewrite(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=seek', true) . '?q=');
+        }
 
         if (!empty($array_menu)) {
             foreach ($array_menu[0] as $id => $item) {
@@ -117,7 +128,13 @@ if (! nv_function_exists('nv_menu_bootstrap')) {
                     $classcurrent[] = 'dropdown';
                     $submenu = nv_get_bootstrap_submenu($id, $array_menu, $submenu_active, $block_theme);
                     $xtpl->assign('SUB', $submenu);
+                    
+                    $xtpl->parse('main.top_menu_pc.sub');
+                    $xtpl->parse('main.top_menu_mobile.sub');
                     $xtpl->parse('main.top_menu.sub');
+
+                    $xtpl->parse('main.top_menu_pc.has_sub');
+                    $xtpl->parse('main.top_menu_mobile.has_sub');
                     $xtpl->parse('main.top_menu.has_sub');
                 }
                 if (nv_menu_bootstrap_check_current($item['link'], $item['active_type'])) {
@@ -136,8 +153,12 @@ if (! nv_function_exists('nv_menu_bootstrap')) {
 
                 $xtpl->assign('TOP_MENU', $item);
                 if (! empty($item['icon'])) {
+                    $xtpl->parse('main.top_menu_pc.icon');
+                    $xtpl->parse('main.top_menu_mobile.icon');
                     $xtpl->parse('main.top_menu.icon');
                 }
+                $xtpl->parse('main.top_menu_pc');
+                $xtpl->parse('main.top_menu_mobile');
                 $xtpl->parse('main.top_menu');
             }
         }
@@ -153,22 +174,37 @@ if (! nv_function_exists('nv_menu_bootstrap')) {
      * @param string $block_theme
      * @return string
      */
-    function nv_get_bootstrap_submenu($id, $array_menu, &$submenu_active, $block_theme)
+    function nv_get_bootstrap_submenu($id, $array_menu, &$submenu_active, $block_theme, $ssmenu = false)
     {
         $xtpl = new XTemplate('global.bootstrap.tpl', NV_ROOTDIR . '/themes/' . $block_theme . '/modules/menu');
 
+        /*
+         * menu có 2 cấp thì class là inside-menu, class còn lại là 1 cấp
+         * sub sub menu = ssmenu
+         */
+        if ($ssmenu) {
+            $xtpl->assign('SUBCLASS', 'inside-menu');
+        } else {
+            $xtpl->assign('SUBCLASS', 'sub-menu');
+        }
+        
         if (! empty($array_menu[$id])) {
+
             foreach ($array_menu[$id] as $sid => $smenu) {
                 if (nv_menu_bootstrap_check_current($smenu['link'], $smenu['active_type'])) {
                     $submenu_active[] = $id;
                 }
                 $submenu = '';
+
                 if (isset($array_menu[$sid])) {
-                    $submenu = nv_get_bootstrap_submenu($sid, $array_menu, $submenu_active, $block_theme);
+                    $submenu = nv_get_bootstrap_submenu($sid, $array_menu, $submenu_active, $block_theme, $ssmenu = true);
+
                     $xtpl->assign('SUB', $submenu);
                     $xtpl->parse('submenu.loop.item');
+                    $xtpl->parse('submenu.loop.has_sub');
                 }
                 $xtpl->assign('SUBMENU', $smenu);
+
                 if (! empty($submenu)) {
                     $xtpl->parse('submenu.loop.submenu');
                 }

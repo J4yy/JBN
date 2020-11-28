@@ -1,34 +1,94 @@
 <!-- BEGIN: submenu -->
-<ul class="dropdown-menu">
+<ul class="{SUBCLASS}">
     <!-- BEGIN: loop -->
-    <li
-        <!-- BEGIN: submenu -->class="dropdown-submenu"<!-- END: submenu -->> <!-- BEGIN: icon --> <img src="{SUBMENU.icon}" />&nbsp; <!-- END: icon --> <a href="{SUBMENU.link}" title="{SUBMENU.note}"{SUBMENU.target}>{SUBMENU.title_trim}</a> <!-- BEGIN: item --> {SUB} <!-- END: item -->
+    <li>
+        <!-- BEGIN: icon --> <img src="{SUBMENU.icon}" />&nbsp; <!-- END: icon -->
+        <a href="{SUBMENU.link}" title="{SUBMENU.note}"{SUBMENU.target}>{SUBMENU.title_trim}<!-- BEGIN: has_sub --><i class="zmdi zmdi-chevron-right"><!-- END: has_sub --></i></a>
+        <!-- BEGIN: item --> {SUB} <!-- END: item -->
     </li>
     <!-- END: loop -->
 </ul>
 <!-- END: submenu -->
 
 <!-- BEGIN: main -->
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-site-default">
-            <span class="sr-only">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span>
-        </button>
-    </div>
-    <div class="collapse navbar-collapse" id="menu-site-default">
-        <ul class="nav navbar-nav">
-            <li><a class="home" title="{LANG.Home}" href="{THEME_SITE_HREF}"><em class="fa fa-lg fa-home">&nbsp;</em><span class="visible-xs-inline-block"> {LANG.Home}</span></a></li>
-            <!-- BEGIN: top_menu -->
-            <li {TOP_MENU.current} role="presentation"><a class="dropdown-toggle" {TOP_MENU.dropdown_data_toggle} href="{TOP_MENU.link}" role="button" aria-expanded="false" title="{TOP_MENU.note}"{TOP_MENU.target}> <!-- BEGIN: icon --> <img src="{TOP_MENU.icon}" />&nbsp; <!-- END: icon --> {TOP_MENU.title_trim}<!-- BEGIN: has_sub --> <strong class="caret">&nbsp;</strong>
-                <!-- END: has_sub --></a> <!-- BEGIN: sub --> {SUB} <!-- END: sub --></li>
-            <!-- END: top_menu -->
-        </ul>
+<div class="header-logo-menu sticker">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <div class="logo">
+                    <a title="{SITE_NAME}" href="{THEME_SITE_HREF}"><img src="{LOGO_SRC}" alt="{SITE_NAME}"></a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-12">
+                <div class="mainmenu-area pull-right">
+                    <div class="mainmenu d-none d-lg-block">
+                        <nav>
+                            <ul id="nav">
+                                <li class="current"><a href="{THEME_SITE_HREF}">{LANG.Home}</a></li>
+                                <!-- BEGIN: top_menu_pc -->
+                                <li>
+                                    <a href="{TOP_MENU.link}" title="{TOP_MENU.note}"{TOP_MENU.target}>
+                                        <!-- BEGIN: icon -->
+                                            <img src="{TOP_MENU.icon}" />&nbsp;
+                                        <!-- END: icon -->
+                                        {TOP_MENU.title_trim}
+                                        <!-- BEGIN: has_sub -->
+                                            <strong class="caret">&nbsp;</strong>
+                                        <!-- END: has_sub -->
+                                    </a>
+                                    <!-- BEGIN: sub --> {SUB} <!-- END: sub -->
+                                </li>
+                                <!-- END: top_menu_pc -->
+                            </ul>
+                        </nav>
+                    </div>
+                    <ul class="header-search">
+                        <li class="search-menu">
+                            <i id="toggle-search" class="zmdi zmdi-search-for"></i>
+                        </li>
+                    </ul>
+                    <!-- Search Form -->
+                    <div class="search">
+                        <div class="search-form">
+                            <form id="search-form" action="#" onsubmit="event.preventDefault();">
+                                <input type="search" maxlength="{NV_MAX_SEARCH_LENGTH}" placeholder="{LANG.search}..." name="search" />
+                                <button type="submit" data-url="{THEME_SEARCH_URL}" data-minlength="{NV_MIN_SEARCH_LENGTH}" data-click="y">
+                                    <span><i class="fa fa-search"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End of Search Form -->
+                </div> 
+            </div>
+        </div>
     </div>
 </div>
-<script type="text/javascript" data-show="after">
-    $(function() {
-        checkWidthMenu();
-        $(window).resize(checkWidthMenu);
-    });
-</script>
+
+<div class="mobile-menu-area">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul>
+                            <li class="current"><a href="{THEME_SITE_HREF}">{LANG.Home}</a></li>
+                            <!-- BEGIN: top_menu_mobile -->
+                            <li>
+                                <a href="{TOP_MENU.link}" title="{TOP_MENU.note}"{TOP_MENU.target}>
+                                    <!-- BEGIN: icon -->
+                                        <img src="{TOP_MENU.icon}" />&nbsp;
+                                    <!-- END: icon -->
+                                    {TOP_MENU.title_trim}
+                                </a>
+                                <!-- BEGIN: sub --> {SUB} <!-- END: sub -->
+                            </li>
+                            <!-- END: top_menu_mobile -->
+                        </ul>
+                    </nav>
+                </div>                  
+            </div>
+        </div>
+    </div>
+</div>
 <!-- END: main -->

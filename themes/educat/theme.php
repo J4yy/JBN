@@ -103,49 +103,23 @@ function nv_site_theme($contents, $full = true)
     }
 
     //Links
-    $html_links = [];
-    $html_links[] = [
-        'rel' => 'stylesheet',
-        'href' => NV_BASE_SITEURL . NV_ASSETS_DIR . '/css/font-awesome.min.css'
+    $module_theme = NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'];
+    $html_links = [
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/font-awesome.min.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/material-design-iconic-font.min.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/bootstrap.min.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/plugins.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/style.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/color.css"],
+        ['rel' => 'stylesheet', 'href' => "$module_theme/css/responsive.css"],
     ];
-    if ($global_config['current_theme_type'] == 'r') {
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/bootstrap.min.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/style.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/style.responsive.css'
-        ];
-    } else {
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/bootstrap.non-responsive.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/style.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/style.non-responsive.css'
-        ];
-    }
     if (defined('NV_IS_ADMIN') and $full) {
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/admin.css'
-        ];
+        $html_links[] = ['rel' => 'stylesheet', 'href' => "$module_theme/css/admin.css"];
     }
+    $html_links[] = ['rel' => 'stylesheet', 'href' => "$module_theme/css/mystyle.css"];
+
     $html_links = array_merge_recursive($html_links, nv_html_links(false));
-    $html_links[] = [
-        'rel' => 'stylesheet',
-        'href' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/css/custom.css'
-    ];
+    $html_links[] = ['rel' => 'stylesheet', 'href' => "$module_theme/css/custom.css"];
 
     // Customs Style
     if (isset($module_config['themes'][$global_config['module_theme']]) and !empty($module_config['themes'][$global_config['module_theme']])) {
@@ -210,14 +184,15 @@ function nv_site_theme($contents, $full = true)
     }
 
     $html_js = nv_html_site_js(false);
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/js/main.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'] . '/js/custom.js'
-    ];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/vendor/jquery-1.12.4.min.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/popper.min.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/bootstrap.min.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/ajax-mail.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/plugins.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/styleswitch.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main-nukeviet.js"];
+    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/custom.js"];
 
     foreach ($html_js as $js) {
         if ($js['ext']) {
@@ -239,6 +214,7 @@ function nv_site_theme($contents, $full = true)
 
     // Header variables
     $xtpl->assign('SITE_NAME', $global_config['site_name']);
+    $xtpl->assign('SITE_PHONE', $global_config['site_phone']);
     $xtpl->assign('THEME_SITE_HREF', NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA);
     $xtpl->assign('LOGO_SRC', NV_BASE_SITEURL . $global_config['site_logo']);
 
@@ -256,16 +232,6 @@ function nv_site_theme($contents, $full = true)
 
     // Only full theme
     if ($full) {
-        // Search form variables
-        $xtpl->assign('NV_MAX_SEARCH_LENGTH', NV_MAX_SEARCH_LENGTH);
-        $xtpl->assign('NV_MIN_SEARCH_LENGTH', NV_MIN_SEARCH_LENGTH);
-
-        if (!$global_config['rewrite_enable']) {
-            $xtpl->assign('THEME_SEARCH_URL', NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=seek&amp;q=');
-        } else {
-            $xtpl->assign('THEME_SEARCH_URL', nv_url_rewrite(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=seek', true) . '?q=');
-        }
-
         // Breadcrumbs
         if (!$home) {
             $array_mod_title_copy = $array_mod_title;
@@ -299,7 +265,7 @@ function nv_site_theme($contents, $full = true)
         $xtpl->assign('THEME_STAT_IMG', $theme_stat_img);
 
         // Change theme types
-        if (sizeof($global_config['array_theme_type']) > 1) {
+        /*if (sizeof($global_config['array_theme_type']) > 1) {
             $mobile_theme = empty($module_info['mobile']) ? $global_config['mobile_theme'] : (($module_info['mobile'] != ':pcmod' and $module_info['mobile'] != ':pcsite') ? $module_info['mobile'] : '');
             if (empty($mobile_theme) or empty($global_config['switch_mobi_des'])) {
                 $array_theme_type = array_diff($global_config['array_theme_type'], [
@@ -329,7 +295,7 @@ function nv_site_theme($contents, $full = true)
                 $xtpl->parse('main.theme_type.loop');
             }
             $xtpl->parse('main.theme_type');
-        }
+        }*/
     }
 
     $xtpl->parse('main');

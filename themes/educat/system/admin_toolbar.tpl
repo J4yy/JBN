@@ -4,7 +4,7 @@
 #admintoolbar{
     position: fixed;
     left: 0;
-    top: 60px;
+    top: 100px;
     background: #205FA0;
     background-image:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
     border-left: 1px solid #205FA0;

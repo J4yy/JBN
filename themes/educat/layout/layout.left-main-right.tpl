@@ -5,7 +5,7 @@
 	[HEADER]
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-13 col-sm-push-6 col-md-push-5">
+    <div class="col-12">
         [TOP]
         {MODULE_CONTENT}
         [BOTTOM]

@@ -1,9 +1,9 @@
 <!-- BEGIN: mainblock -->
-<div class="panel panel-primary">
-	<div class="panel-heading">
+<div class="card card-primary">
+	<div class="card-heading">
 		{BLOCK_TITLE}
 	</div>
-	<div class="panel-body">
+	<div class="card-body">
 		{BLOCK_CONTENT}
 	</div>
 </div>

@@ -1,4 +1,4 @@
-                </div>
+                <!-- </div>
             </section>
         </div>
     </div>
@@ -31,29 +31,122 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <nav class="section-footer-bottom footerNav2">
-        <div class="wraper">
-            <div class="container">
-                <!-- BEGIN: theme_type -->
-                <div class="theme-change">
-                <!-- BEGIN: loop -->
-                    <!-- BEGIN: other -->
-                    <a href="{STHEME_TYPE}" rel="nofollow" title="{STHEME_INFO}"><i class="fa fa-{STHEME_ICON}"></i></a>
-                    <!-- END: other -->
-                    <!-- BEGIN: current -->
-                    <span title="{LANG.theme_type_select}: {STHEME_TITLE}"><i class="fa fa-{STHEME_ICON}"></i></span>
-                    <!-- END: current -->
-                <!-- END: loop -->
+    </footer> -->
+    <!--Newsletter Area Start-->
+    <div class="newsletter-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5">
+                    <div class="newsletter-content">
+                        <h3>SUBSCRIBE</h3>
+                        <h2>TO OUR NEWSLETTER</h2>
+                    </div>
                 </div>
-                <!-- END: theme_type -->
-                <div class="bttop">
-                    <a class="pointer"><i class="fa fa-eject fa-lg"></i></a>
+                <div class="col-lg-7 col-md-7">
+                    <div class="newsletter-form angle">
+                        <form action="#" id="mc-form" class="mc-form footer-newsletter fix">
+                            <div class="subscribe-form">
+                                <input id="mc-email" type="email" name="email" placeholder="Enter your email address...">
+                                <button id="mc-submit" type="submit">SUBSCRIBE</button>
+                            </div>    
+                        </form>
+                        <!-- mailchimp-alerts Start -->
+                        <div class="mailchimp-alerts text-centre fix pull-right">
+                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        </div>
+                        <!-- mailchimp-alerts end -->
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!--End of Newsletter Area-->
+    <!--Footer Widget Area Start-->
+    <div class="footer-widget-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <div class="footer-logo">
+                            <a href="{NV_BASE_SITEURL}"><img src="{LOGO_SRC}" alt=""></a>
+                        </div>
+
+                        [SOCIAL_ICONS]
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget" itemscope itemtype="http://schema.org/LocalBusiness">
+                        [MENU_FOOTER]
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        [COMPANY_INFO]
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Instagram</h3>
+                        <div class="instagram-image">
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/1.jpg" alt=""></a>
+                            </div>
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/2.jpg" alt=""></a>
+                            </div>
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/3.jpg" alt=""></a>
+                            </div>
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/4.jpg" alt=""></a>
+                            </div>
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/5.jpg" alt=""></a>
+                            </div>
+                            <div class="footer-img">
+                                <a href="#"><img src="img/footer/6.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="qr-code-wraper">
+                        [QR_CODE]
+                    </div>
+                    <div id="ftip" data-content="">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    [FOOTER_SITE]
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Footer Widget Area-->
+    <!--Footer Area Start-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 col-12">
+                    <span>Copyright &copy; BinPC 2020. All right reserved. Created by <a href="#">Bin (JBN)</a></span>
+                </div>
+                <div class="col-lg-6 col-md-5 col-12">
+                    <div class="column-right">
+                        <span>Privacy Policy , Terms &amp; Conditions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End of Footer Area-->
+
     {ADMINTOOLBAR}
+
     <!-- SiteModal Required!!! -->
     <div id="sitemodal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -70,8 +163,4 @@
     </div>
     <div class="fix_banner_right">
         [FIX_BANNER_RIGHT]
-    </div>
-
-    <div class="fix_bottom_left">
-        [FIX_BOTTOM_LEFT]
     </div>

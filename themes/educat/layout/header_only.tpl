@@ -2,9 +2,12 @@
     <html lang="{LANG.Content_Language}" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#">
     <head>
         <title>{THEME_PAGE_TITLE}</title>
-        <!-- BEGIN: metatags --><meta {THEME_META_TAGS.name}="{THEME_META_TAGS.value}" content="{THEME_META_TAGS.content}">
+        <!-- BEGIN: metatags -->
+        <meta {THEME_META_TAGS.name}="{THEME_META_TAGS.value}" content="{THEME_META_TAGS.content}">
         <!-- END: metatags -->
+
         <link rel="shortcut icon" href="{SITE_FAVICON}">
+        
         <!-- BEGIN: links -->
         <link<!-- BEGIN: attr --> {LINKS.key}<!-- BEGIN: val -->="{LINKS.value}"<!-- END: val --><!-- END: attr -->>
         <!-- END: links -->
@@ -21,3 +24,11 @@
         </script>
     </head>
     <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!--Main Wrapper Start-->
+        <div class="as-mainwrapper">
+            <!--Bg White Start-->
+            <div class="bg-white">
