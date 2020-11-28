@@ -970,9 +970,9 @@ function user_welcome()
         $xtpl->parse('main.crossdomain_listener');
     }
 
-    if (!empty($user_info['photo'])) {
+    if (!empty($user_info['avata'])) {
         $xtpl->assign('IMG', array(
-            'src' => NV_BASE_SITEURL . "{$user_info['photo']}",
+            'src' => $user_info['avata'],
             'title' => $lang_module['img_size_title']
         ));
     } else {
