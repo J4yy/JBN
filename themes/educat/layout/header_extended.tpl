@@ -52,8 +52,9 @@
                         <div class="card-header"><span class="current-time">{NV_CURRENTTIME}</span></div>
                     </div>
                     <!-- END: currenttime -->
+                    
+                    [THEME_ERROR_INFO]
                 </div>
             </div>
         </div>
     </div>
-    [THEME_ERROR_INFO]

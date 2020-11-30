@@ -15,8 +15,8 @@
 <link rel="stylesheet" type="text/css"	href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/jquery.metisMenu.css" />
 <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery/jquery.metisMenu.js"></script>
 
-<div class="clearfix panel metismenu">
-	<aside class="sidebar">
+<div class="metismenu">
+	<aside class="sidebar mb-3">
 		<nav class="sidebar-nav">
 			<ul id="menu_{MENUID}">
 				<!-- BEGIN: cat -->

@@ -1,6 +1,6 @@
 <!-- BEGIN: mainblock -->
-<div class="card card-default">
-	<div class="card-heading">
+<div class="card">
+	<div class="card-header">
 		{BLOCK_TITLE}
 	</div>
 	<div class="card-body">

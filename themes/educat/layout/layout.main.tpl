@@ -5,7 +5,7 @@
 	[HEADER]
 </div>
 <div class="row">
-	<div class="col-md-24">
+	<div class="col-12">
 		[TOP]
 		{MODULE_CONTENT}
 		[BOTTOM]

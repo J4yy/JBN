@@ -184,9 +184,8 @@ function nv_site_theme($contents, $full = true)
     }
 
     $html_js = nv_html_site_js(false);
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/vendor/jquery-1.12.4.min.js"];
+    $html_js[] = ['ext' => 1, 'content' => 'https://code.jquery.com/jquery-1.12.4.min.js'];
     $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/popper.min.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/bootstrap.min.js"];
     $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/ajax-mail.js"];
     $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/plugins.js"];
     $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/styleswitch.js"];

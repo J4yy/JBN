@@ -62,10 +62,10 @@
 /*--------------------------
     Counter Up
 ---------------------------- */	
-    $('.counter').counterUp({
+    /*$('.counter').counterUp({
         delay: 70,
         time: 5000
-    }); 
+    });*/
     
 /*--------------------------------
 	Testimonial Slick Carousel
@@ -192,6 +192,5 @@ $('.popup-image').magnificPopup({
 $('.popup-youtube').magnificPopup({
     type: 'iframe'
 });
-    
     
 })(jQuery); 

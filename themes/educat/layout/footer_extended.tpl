@@ -1,37 +1,4 @@
-                <!-- </div>
-            </section>
-        </div>
-    </div>
-    <footer class="section-footer-top" id="footer">
-        <div class="wraper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-24 col-sm-24 col-md-6">
-                        [MENU_FOOTER]
-                    </div>
-                    <div class="col-xs-24 col-sm-24 col-md-10">
-                        [FEATURED_PRODUCT]
-                    </div>
-                    <div class="col-xs-24 col-sm-24 col-md-8">
-                        [COMPANY_INFO]
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-24 col-sm-24 col-md-8">
-                        <div class="qr-code-wraper">
-                            [QR_CODE]
-                        </div>
-                        <div id="ftip" data-content="">
-                            <div class="bg"></div>
-                        </div>
-                    </div>
-                    <div class="col-xs-24 col-sm-24 col-md-16">
-                        [FOOTER_SITE]
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
+    <!-- [FEATURED_PRODUCT] -->
     <!--Newsletter Area Start-->
     <div class="newsletter-area">
         <div class="container">

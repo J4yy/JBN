@@ -1,5 +1,5 @@
 <!-- BEGIN: mainblock -->
-<div class="well">
+<div class="alert alert-success">
 	{BLOCK_CONTENT}
 </div>
 <!--  END: mainblock -->
