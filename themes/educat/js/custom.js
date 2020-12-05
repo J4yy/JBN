@@ -17,3 +17,17 @@ $("#search-form button").on("click", function() {
 $("#search-form input").on("keypress", function(a) {
     13 != a.which || a.shiftKey || (a.preventDefault(), $("#search-form button").trigger("click"))
 });
+
+function put_banner_after_top(header_height) {
+    $('.fix_banner_left').css('margin-top', header_height + 'px');
+    $('.fix_banner_right').css('margin-top', header_height + 'px');
+}
+
+$(window).scroll(function() {
+    put_banner_after_top($('header').outerHeight());
+});
+
+$(document).ready(function() {
+    console.log($('header').outerHeight())
+    put_banner_after_top($('header').outerHeight());
+});

@@ -56,7 +56,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-footer-widget">
                         <h3>Instagram</h3>
-                        <div class="instagram-image">
+                        <!-- <div class="instagram-image">
                             <div class="footer-img">
                                 <a href="#"><img src="img/footer/1.jpg" alt=""></a>
                             </div>
@@ -75,7 +75,7 @@
                             <div class="footer-img">
                                 <a href="#"><img src="img/footer/6.jpg" alt=""></a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

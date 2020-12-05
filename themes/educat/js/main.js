@@ -70,18 +70,18 @@
 /*--------------------------------
 	Testimonial Slick Carousel
 -----------------------------------*/
-    $('.testimonial-text-slider').slick({
+    /*$('.testimonial-text-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         draggable: false,
         fade: true,
         asNavFor: '.slider-nav'
-    });
+    });*/
 /*------------------------------------
 	Testimonial Slick Carousel as Nav
 --------------------------------------*/
-    $('.testimonial-image-slider').slick({
+/*    $('.testimonial-image-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '.testimonial-text-slider',
@@ -109,16 +109,16 @@
                 }
             }
         ]
-    });
+    });*/
 
 /*------------------------------------
 	Testimonial Slick Carousel
 --------------------------------------*/
-    $('.testimonial-carousel').slick({
+    /*$('.testimonial-carousel').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-    });
+    });*/
     
 /*------------------------------------
 	Textilate Activation

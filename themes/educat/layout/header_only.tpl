@@ -8,12 +8,42 @@
 
         <link rel="shortcut icon" href="{SITE_FAVICON}">
         
+        <!-- Fontawsome CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/font-awesome.min.css">
+        
+        <!-- Metarial Iconic Font CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/material-design-iconic-font.min.css">
+        
+        <!-- Bootstrap CSS
+        ============================================ -->        
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/bootstrap.min.css">
+        
+        <!-- Plugins CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/plugins.css">
+        
+        <!-- Style CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/style.css">
+        
+        <!-- Color CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/color.css">
+        
+        <!-- Responsive CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/responsive.css">
+        
+        <!-- Modernizr JS
+        ============================================ -->
+        <script src="{NV_BASE_SITEURL}themes/{TEMPLATE}/js/vendor/modernizr-2.8.3.min.js"></script>
+
         <!-- BEGIN: links -->
         <link<!-- BEGIN: attr --> {LINKS.key}<!-- BEGIN: val -->="{LINKS.value}"<!-- END: val --><!-- END: attr -->>
         <!-- END: links -->
-        <!-- BEGIN: js -->
-        <script<!-- BEGIN: ext --> src="{JS_SRC}"<!-- END: ext -->><!-- BEGIN: int -->{JS_CONTENT}<!-- END: int --></script>
-        <!-- END: js -->
+        
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",

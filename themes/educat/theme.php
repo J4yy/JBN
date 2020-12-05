@@ -105,13 +105,14 @@ function nv_site_theme($contents, $full = true)
     //Links
     $module_theme = NV_BASE_SITEURL . 'themes/' . $global_config['module_theme'];
     $html_links = [
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/font-awesome.min.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/material-design-iconic-font.min.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/bootstrap.min.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/plugins.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/style.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/color.css"],
-        ['rel' => 'stylesheet', 'href' => "$module_theme/css/responsive.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/font-awesome.min.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/material-design-iconic-font.min.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/bootstrap.min.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/plugins.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/style-nukeviet.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/style.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/color.css"],
+        // ['rel' => 'stylesheet', 'href' => "$module_theme/css/responsive.css"],
     ];
     if (defined('NV_IS_ADMIN') and $full) {
         $html_links[] = ['rel' => 'stylesheet', 'href' => "$module_theme/css/admin.css"];
@@ -184,14 +185,14 @@ function nv_site_theme($contents, $full = true)
     }
 
     $html_js = nv_html_site_js(false);
-    $html_js[] = ['ext' => 1, 'content' => 'https://code.jquery.com/jquery-1.12.4.min.js'];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/popper.min.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/ajax-mail.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/plugins.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/styleswitch.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main-nukeviet.js"];
-    $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/custom.js"];
+    // $html_js[] = ['ext' => 1, 'content' => 'https://code.jquery.com/jquery-1.12.4.min.js'];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/popper.min.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/ajax-mail.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/plugins.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/styleswitch.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/main-nukeviet.js"];
+    // $html_js[] = ['ext' => 1, 'content' => "$module_theme/js/custom.js"];
 
     foreach ($html_js as $js) {
         if ($js['ext']) {

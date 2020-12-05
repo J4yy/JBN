@@ -36,6 +36,14 @@
     margin-bottom: 0;
 }
 
+.fix_banner_left {
+    top: 175px;
+}
+
+.fix_banner_right {
+    top: 175px;
+}
+
 .shortcode-area {
     padding: 20px 0 20px;
 }
